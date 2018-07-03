@@ -1,0 +1,52 @@
+<div *ngIf='isLoaded()' fxLayoutAlign="start" fxLayout="row">
+  <div fxFlex='40%' fxFlexOffset='5'>
+    <h3>{{ character.name | uppercase }}</h3>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item>Height: {{character.height | uppercase}}</mat-list-item>
+        <mat-list-item>Mass: {{character.mass | uppercase}}</mat-list-item>
+        <mat-list-item>Hair color: {{character.hair_color | uppercase}}</mat-list-item>
+        <mat-list-item>Skin color: {{character.skin_color | uppercase}}</mat-list-item>
+        <mat-list-item>Eye color: {{character.eye_color | uppercase}}</mat-list-item>
+        <mat-list-item>Birth year: {{character.birth_year | uppercase}}</mat-list-item>
+        <mat-list-item>Gender: {{character.gender | uppercase}}</mat-list-item>
+        <mat-list-item>Home world: {{character.homeworld | uppercase}}</mat-list-item>
+        <mat-list-item *ngFor='let species of fetched_species'>Species: {{species.name | uppercase}}</mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf='fetched_films.length>0'>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Films
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <li *ngFor='let film of fetched_films'>{{film.title}}</li>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf='fetched_vehicles.length>0'>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Vehicles
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <li *ngFor='let vehicle of fetched_vehicles'>{{vehicle.name}}</li>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf='fetched_starships.length>0'>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Starships
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <li *ngFor='let starship of fetched_starships'>{{starship.name}}</li>
+    </mat-expansion-panel>
+    <button mat-button (click)="characterDetailsService.goBack()">
+      <i class="material-icons">reply</i> Go back</button>
+  </div>
+</div>
+<div *ngIf='!isLoaded()' fxLayoutAlign="center center">
+  <img src="./assets/loading.gif" alt="Loading">
+</div>

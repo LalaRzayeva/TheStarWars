@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <img fxShow="false" fxShow.gt-xs src="./assets/starwarslogo.png" alt="Logo">
+  <div fxLayout="row" fxShow="false" fxShow.gt-xs>
+    <a mat-button routerLink='/characters' routerLinkActive="active">Heroes</a>
+    <a mat-button routerLink='/movies' routerLinkActive="active">Movies</a>
+    <a mat-button routerLink='/recruitment' routerLinkActive="active">Recruited</a>
+  </div>
+  <div fxHide="false" fxHide.gt-xs>
+    <mat-menu #appMenu="matMenu">
+      <a mat-button routerLink='/characters' routerLinkActive="active">Heroes</a>
+      <a mat-button routerLink='/movies' routerLinkActive="active">Movies</a>
+      <a mat-button routerLink='/recruitment' routerLinkActive="active">Recruited</a>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <i class="material-icons">menu</i>
+    </button>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

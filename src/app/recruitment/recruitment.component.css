@@ -1,0 +1,28 @@
+h3 {
+  text-transform: uppercase;
+  opacity: 0.4;
+  color: #D5DCE2;
+}
+
+img {
+  opacity: 0.4;
+}
+
+li {
+  list-style: none;
+  font-size: larger;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #D5DCE2;
+  margin-bottom: 0.8em;
+}
+
+li:hover {
+  color: #fef32b;
+}
+
+svg.svg-inline--fa {
+  color: red;
+}
+

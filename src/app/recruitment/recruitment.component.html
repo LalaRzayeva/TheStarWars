@@ -1,0 +1,20 @@
+<div *ngIf='isLoaded()'>
+  <ul>
+    <li *ngFor='let character of characters' (click)="characterDetailsService.goToDetails(character)">{{character.name}}&nbsp;
+      <span (click)='removeCharacter(character)'>
+        <i class="fas fa-times"></i>
+      </span>
+    </li>
+  </ul>
+  <button mat-button (click)="characterDetailsService.goBack()">
+    <i class="material-icons">reply</i> Go back
+  </button>
+</div>
+
+<div *ngIf='!isLoaded()' fxLayoutAlign="center center">
+  <img src="./assets/loading.gif" alt="Loading">
+</div>
+<div *ngIf='isLoaded() && characters.length === 0' fxLayout='column' fxLayoutAlign="center center">
+  <img src="./assets/empty.png" alt="empty page">
+  <h3>Empty</h3>
+</div>

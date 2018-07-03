@@ -1,0 +1,19 @@
+<div *ngIf='isLoaded()' fxLayoutAlign="start" fxLayout="row">
+  <div fxFlex fxFlexOffset.gt-xs='15' class='movies'>
+    <mat-expansion-panel *ngFor='let movie of movies'>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{movie.title}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul>
+        <li *ngFor='let character of movie.fetched_characters' (click)='characterDetailsService.goToDetails(character)'>{{character.name}}</li>
+      </ul>
+    </mat-expansion-panel>
+    <button mat-button (click)="characterDetailsService.goBack()">
+      <i class="material-icons">reply</i> Go back</button>
+  </div>
+</div>
+<div *ngIf='!isLoaded()' fxFlex="100%" fxLayoutAlign="center center">
+  <img src="./assets/loading.gif" alt="Loading">
+</div>

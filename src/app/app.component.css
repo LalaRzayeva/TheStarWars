@@ -1,0 +1,25 @@
+.mat-toolbar {
+  background: #15191F;
+  color: #D5DCE2;
+  margin-bottom: 1.5em;
+}
+
+.mat-menu-content {
+  background: #15191F !important;
+  color: #D5DCE2;
+}
+
+a.mat-button {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+}
+
+a.mat-button:hover {
+  color: #fef32b;
+}
+
+a.mat-button.active {
+  color: #fef32b;
+  border-bottom: 2px solid #fef32b;
+}

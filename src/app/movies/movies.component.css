@@ -1,0 +1,32 @@
+.mat-expansion-panel {
+  width: 20em;
+  margin-top: 1.5em;
+  background: #4A525D;
+}
+
+.mat-expansion-panel ul {
+  list-style: none;
+  padding-top: 0.1em;
+  color: #D5DCE2;
+  font-weight: 700;
+  font-size: large;
+}
+
+.mat-expansion-panel ul li {
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.mat-expansion-panel ul li:hover {
+  border: 2px solid #fef32b;
+}
+
+mat-panel-title {
+  color: #fef32b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.movies {
+  margin-bottom: 4em;
+}

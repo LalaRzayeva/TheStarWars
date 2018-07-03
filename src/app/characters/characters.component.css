@@ -1,0 +1,55 @@
+.my-pagination /deep/ .ngx-pagination {
+  padding: 0;
+  font-size: small;
+}
+
+.my-pagination /deep/ .ngx-pagination a {
+  color: #fef32b;
+  font-weight: 700;
+}
+
+.my-pagination /deep/ .ngx-pagination li.current {
+  color: #2A323D;
+  background: #fef32b;
+  border-radius: 5px;
+}
+
+.my-pagination /deep/ .ngx-pagination a:hover {
+  opacity: 0.7;
+  background: transparent;
+}
+
+mat-card {
+  background: #2A323D;
+  color: #fef32b;
+  height: 15em;
+  width: 13em;
+  margin: 0 auto;
+}
+
+mat-card-title {
+  font-weight: 700;
+  border: 2px solid #fef32b;
+  padding: 0.8em;
+  cursor: pointer;
+}
+
+mat-card-title:hover {
+  color: #2A323D;
+  background: #fef32b;
+}
+
+mat-card-actions button {
+  font-weight: 700;
+  background: #fef32b;
+  color: #2A323D;
+  float: right;
+  margin-right: 1em!important;
+ 
+}
+
+mat-card-actions button:hover {
+  background: #2A323D;
+  color: #fef32b;
+  border: 2px solid #fef32b;
+}

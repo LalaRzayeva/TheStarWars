@@ -1,0 +1,31 @@
+H3 {
+  font-size: larger;
+}
+.mat-expansion-panel {
+  margin-top: 1.5em;
+  width: 18em;
+  background: #4A525D;
+  color: #D5DCE2;
+  font-size: larger;
+}
+
+.mat-expansion-panel-header-title {
+  color: #fef32b;
+  font-size: large;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+li.ng-star-inserted {
+  font-size: large;
+  font-weight: 700;
+  padding-bottom: 1em;
+}
+
+.mat-list .mat-list-item {
+  color: #D5DCE2;
+  font-size: large;
+  font-weight: 700;
+  height: 20px;
+  padding-bottom: 18px;
+}

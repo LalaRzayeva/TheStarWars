@@ -1,0 +1,31 @@
+<div *ngIf='isLoaded()' fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.lt-sm="column" fxLayoutGap='0.5%'>
+
+  <div fxFlex.sm="45%" fxFlex.md="30%" fxFlex.gt-md="20%" *ngFor="let character of characters | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: count }">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title (click)="characterDetailsService.goToDetails(character)">{{character.name | uppercase}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Birth year: {{character.birth_year | uppercase}}</p>
+        <p>Home world: {{character.homeworld | uppercase}}</p>
+        <p>Weight: {{character.mass | uppercase}}</p>
+        <p>Height: {{character.height | uppercase}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button *ngIf='!recruitmentService.isRecruited(character)' (click)='recruitmentService.addCharacter(character)'>ADD
+          <i class="material-icons">add_circle</i>
+        </button>
+        <button mat-button *ngIf='recruitmentService.isRecruited(character)' (click)='recruitmentService.removeCharacter(character)'>REMOVE
+          <i class="material-icons">remove_circle</i>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <br>
+  </div>
+  <div fxFlex="100%" fxLayoutAlign="center center">
+    <pagination-controls class="my-pagination" (pageChange)="getPage($event)" id="server"></pagination-controls>
+  </div>
+</div>
+<div *ngIf='!isLoaded()' fxLayoutAlign="center center">
+  <img src="./assets/loading.gif" alt="Loading">
+</div>
